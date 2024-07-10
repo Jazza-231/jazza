@@ -1,29 +1,134 @@
-root {
-  /** CSS DARK THEME PRIMARY COLORS */
-  --color-primary-100: #3f51b5;
-  --color-primary-200: #5962be;
-  --color-primary-300: #7074c6;
-  --color-primary-400: #8587ce;
-  --color-primary-500: #9a9ad7;
-  --color-primary-600: #aeaddf;
+:root {
+  /** Primary Colors */
+  --color-primary: #3f51b5;
+  --color-primary-light: #9a9ad7;
+  --color-primary-dark: #121212;
 
-  /** CSS DARK THEME SURFACE COLORS */
-  --color-surface-100: #121212;
-  --color-surface-200: #282828;
-  --color-surface-300: #3f3f3f;
-  --color-surface-400: #575757;
-  --color-surface-500: #717171;
-  --color-surface-600: #8b8b8b;
+  /** Surface Colors */
+  --color-background: #121212;
+  --color-surface: #282828;
+  --color-surface-light: #3f3f3f;
+  --color-surface-dark: #1c1c1c;
 
-  /** CSS DARK THEME MIXED SURFACE COLORS */
-  --color-surface-mixed-100: #181820;
-  --color-surface-mixed-200: #2d2d35;
-  --color-surface-mixed-300: #44444b;
-  --color-surface-mixed-400: #5c5b62;
-  --color-surface-mixed-500: #75747a;
-  --color-surface-mixed-600: #8f8f93;
+  /** Text Colors */
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #b3b3b3;
+  --color-text-disabled: #8b8b8b;
+
+  /** Button Colors */
+  --color-button-bg: #3f51b5;
+  --color-button-text: #ffffff;
+  --color-button-hover-bg: #7074c6;
+  --color-button-hover-text: #ffffff;
+
+  /** Mixed Surface Colors */
+  --color-surface-mixed: #181820;
+  --color-surface-mixed-light: #2d2d35;
+  --color-surface-mixed-dark: #44444b;
 }
 
 body {
-  background-color: var(--color-surface-mixed-100);
+  background-color: var(--color-surface-mixed);
+  font-family: "Roboto", sans-serif;
+  color: var(--color-text-primary);
+  margin: 0px;
+}
+
+header {
+  background-color: var(--color-surface-mixed-light);
+}
+
+.header-text-items {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0px;
+  padding: 0px;
+}
+
+.header-text-items li {
+  font-size: larger;
+  list-style-type: none;
+  margin: 15px;
+}
+
+a {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: color 200ms;
+}
+
+a:hover,
+.header-text-items li:hover > a {
+  color: var(--color-text-primary);
+}
+
+.header-text-items li svg {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+
+.header-text-items li svg path {
+  fill: var(--color-text-secondary);
+  transition: fill 200ms;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  background-color: var(--color-surface-mixed-dark);
+  color: black;
+  min-width: 150px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  padding: 5px;
+  font-size: medium;
+  border-radius: 0.5rem;
+}
+
+.dropdown a {
+  padding: 5px;
+}
+
+.header-text-items li:hover .dropdown {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.header-text-items li:hover svg path {
+  fill: var(--color-text-primary);
+}
+
+.greeting {
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}
+
+.rainbow {
+  background: linear-gradient(
+    to right,
+    #ff0000,
+    #ff7f00,
+    #ffff00,
+    #00ff00,
+    #0000ff,
+    #4b0082,
+    #8b00ff
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: bold;
+  filter: contrast(0.6);
+  transition: filter 750ms;
+}
+
+.rainbow:hover {
+  filter: contrast(0.6) hue-rotate(360deg);
 }
