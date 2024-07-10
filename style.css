@@ -29,13 +29,33 @@
 
 body {
   background-color: var(--color-surface-mixed);
-  font-family: "Roboto", sans-serif;
+  font-family: "Varela Round", "Roboto", sans-serif;
   color: var(--color-text-primary);
   margin: 0px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   background-color: var(--color-surface-mixed-light);
+  z-index: 1000; /* Ensure it is above other content */
+}
+
+main {
+  padding-top: 40px;
+  flex: 1;
+}
+
+footer {
+  background-color: var(--color-surface-mixed-dark);
+  color: var(--color-text-secondary);
+  padding: 1rem;
+  text-align: center;
 }
 
 .header-text-items {
@@ -131,4 +151,54 @@ a:hover,
 
 .rainbow:hover {
   filter: contrast(0.6) hue-rotate(360deg);
+}
+
+.italics {
+  font-style: italic;
+}
+
+.about-me {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+  padding: 0px;
+}
+
+.about-container {
+  margin: 40px;
+  padding: 0px;
+  width: 50vw;
+}
+
+.about {
+  font-size: larger;
+}
+
+.about-text {
+  color: var(--color-text-secondary);
+}
+
+.brandon {
+  position: relative;
+  display: inline-block;
+  transition: color 200ms;
+  font-weight: bold;
+}
+
+.brandon::after {
+  content: " <3";
+  color: var(--color-secondary);
+  position: absolute;
+  right: -35px; /* Adjust based on your preference */
+  opacity: 0;
+  transform: translateX(20px);
+  transition: transform 200ms, opacity 200ms;
+  color: rgb(210, 70, 90);
+}
+
+.brandon:hover::after {
+  opacity: 1;
+  transform: translateX(0);
 }
