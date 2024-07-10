@@ -4,13 +4,19 @@
     <meta charset="UTF-8" />
     <title>Redirecting...</title>
     <script>
-      window.location.href = "https://en.pronouns.page/@Jazza";
+      window.open("https://en.pronouns.page/@Jazza", "_blank");
+
+      setTimeout(() => {
+        window.location.href = "https://jazza.dev";
+      }, 10000);
     </script>
   </head>
   <body>
     <p>
       If you are not redirected automatically, follow this
-      <a href="https://en.pronouns.page/@Jazza">link to the target page</a>.
+      <a href="https://en.pronouns.page/@Jazza" target="_blank"
+        >link to the target page.</a
+      >. This page will redirect to jazza.dev in 10 seconds.
     </p>
   </body>
 </html>
