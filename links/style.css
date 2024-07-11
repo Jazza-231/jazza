@@ -1,0 +1,25 @@
+.links-header {
+  display: flex;
+  justify-content: center;
+}
+
+.links {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+  margin: 3rem;
+}
+
+.link-card p {
+  color: var(--color-text-secondary);
+}
+
+.link-card h3 {
+  margin: 0;
+}
+
+.link-card {
+  padding: 1rem;
+  border: var(--color-surface-mixed-light) 2px solid;
+  border-radius: 0.5rem;
+}

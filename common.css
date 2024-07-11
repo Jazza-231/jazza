@@ -1,0 +1,123 @@
+@import url(variables.css);
+
+body {
+  background-color: var(--color-surface-mixed);
+  font-family: "Varela Round", "Roboto", sans-serif;
+  color: var(--color-text-primary);
+  margin: 0px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-surface-mixed-light);
+  z-index: 1000; /* Ensure it is above other content */
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  background-color: var(--color-surface-mixed-dark);
+  color: var(--color-text-secondary);
+  padding: 1rem;
+  text-align: center;
+}
+
+.header-text-items {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0px;
+  padding: 0px;
+}
+
+.header-text-items li {
+  font-size: larger;
+  list-style-type: none;
+  margin: 15px;
+}
+
+a {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: color 200ms;
+}
+
+a:hover,
+.header-text-items li:hover > a {
+  color: var(--color-text-primary);
+}
+
+.header-text-items li svg {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+
+.header-text-items li svg path {
+  fill: var(--color-text-secondary);
+  transition: fill 200ms;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  background-color: var(--color-surface-mixed-dark);
+  color: black;
+  min-width: 150px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  padding: 5px;
+  font-size: medium;
+  border-radius: 0.5rem;
+}
+
+.dropdown a {
+  padding: 5px;
+}
+
+.header-text-items li:hover .dropdown {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.header-text-items li:hover svg path {
+  fill: var(--color-text-primary);
+}
+
+.rainbow {
+  background: linear-gradient(
+    to right,
+    #ff0000,
+    #ff7f00,
+    #ffff00,
+    #00ff00,
+    #0000ff,
+    #4b0082,
+    #8b00ff
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: bold;
+  filter: contrast(0.6);
+  transition: filter 750ms;
+}
+
+.rainbow:hover {
+  filter: contrast(0.6) hue-rotate(360deg);
+}
+
+.italics {
+  font-style: italic;
+}

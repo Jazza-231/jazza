@@ -1,0 +1,27 @@
+@import url(../variables.css);
+
+.projects-header {
+  display: flex;
+  justify-content: center;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+  margin: 3rem;
+}
+
+.project-card p {
+  color: var(--color-text-secondary);
+}
+
+.project-card h3 {
+  margin: 0;
+}
+
+.project-card {
+  padding: 1rem;
+  border: var(--color-surface-mixed-light) 2px solid;
+  border-radius: 0.5rem;
+}
