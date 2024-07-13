@@ -51,9 +51,19 @@ a {
   transition: color 200ms;
 }
 
+a.out {
+  text-decoration: revert;
+  text-underline-offset: 1px;
+  transition: text-underline-offset 200ms;
+}
+
 a:hover,
 .header-text-items li:hover > a {
   color: var(--color-text-primary);
+}
+
+a.out:hover {
+  text-underline-offset: 5px;
 }
 
 .header-text-items li svg {
@@ -115,7 +125,7 @@ a:hover,
 }
 
 .rainbow:hover {
-  filter: contrast(0.6) hue-rotate(360deg);
+  filter: contrast(0.6) brightness(1.2) hue-rotate(360deg);
 }
 
 .italics {

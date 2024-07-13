@@ -1,0 +1,19 @@
+.project-header {
+  display: flex;
+  justify-content: center;
+}
+
+.info-container {
+  display: flex;
+  justify-content: center;
+}
+
+.info {
+  width: 40rem;
+}
+
+.description,
+.languages-list,
+.plans {
+  color: var(--color-text-secondary);
+}

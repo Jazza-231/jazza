@@ -24,4 +24,5 @@
   padding: 1rem;
   border: var(--color-surface-mixed-light) 2px solid;
   border-radius: 0.5rem;
+  cursor: pointer;
 }
