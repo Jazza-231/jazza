@@ -52,3 +52,11 @@
   opacity: 1;
   transform: translateX(0);
 }
+
+.four-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
