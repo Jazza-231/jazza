@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Rockstar Launcher</title>
+
+      <meta property="og:title" content="Jazza.dev" />
+      <meta property="og:description" content="My personal website!" />
+      <meta property="og:image" content="https://jazza.dev/bitmoji.png" />
+      <meta property="og:url" content="https://jazza.dev" />
+      <meta property="og:type" content="website" />
+
+      <link rel="stylesheet" href="style.css" />
+      <link rel="stylesheet" href="/common.css" />
+
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+         rel="stylesheet"
+      />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
+         rel="stylesheet"
+      />
+   </head>
+   <body>
+      <header>
+         <ul class="header-text-items">
+            <li id="home">
+               <a href="/">Home</a>
+            </li>
+            <li id="projects">
+               <a href="/projects/">
+                  Projects
+                  <svg
+                     xmlns="http://www.w3.org/2000/svg"
+                     viewBox="0 0 24 24"
+                     id="angle-down"
+                  >
+                     <path
+                        d="M17,9.17a1,1,0,0,0-1.41,0L12,12.71,8.46,9.17a1,1,0,0,0-1.41,0,1,1,0,0,0,0,1.42l4.24,4.24a1,1,0,0,0,1.42,0L17,10.59A1,1,0,0,0,17,9.17Z"
+                     ></path>
+                  </svg>
+               </a>
+               <div class="dropdown projects-dropdown">
+                  <a href="/projects/website/">This website</a>
+                  <a href="/projects/sa/">Scratch Addons</a>
+                  <a href="/projects/mediascout/">MediaScout</a>
+                  <a href="/projects/mobile/">Scratch mobile</a>
+               </div>
+            </li>
+            <li id="links">
+               <a href="/links">Links</a>
+            </li>
+            <li id="posts">
+               <a href="/posts/">Posts</a>
+            </li>
+         </ul>
+      </header>
+
+      <main>
+         <div class="documentation">
+            <h1>Rockstar Launcher Documentation</h1>
+            <p>
+               This is going to be a long documentation of my experience with
+               the Rockstar Launcher. It will be sent to various forums,
+               Rockstar Support, and Steam in the hope of helping others.
+            </p>
+
+            <h2>The Issue</h2>
+            <p>
+               Upon trying to launch RDR2, the launcher would attempt to update.
+               It would open two admin prompts and ultimately fail the update
+               with the following error message:
+            </p>
+            <p>
+               <strong
+                  >“The Social Club failed to load due to an incomplete
+                  installation (code 1002). Please exit the game and reinstall
+                  the latest version of the Social Club:
+                  <a href="https://support.rockstargames.com"
+                     >https://support.rockstargames.com</a
+                  >.”</strong
+               >
+            </p>
+
+            <h2>Support Experience</h2>
+            <p>
+               I dutifully followed the support link to reinstall the latest
+               version of the Social Club. Issue 1: There is no clear link for
+               installing the Social Club. Upon further investigation, this is
+               not something you can install yourself; it should say you need to
+               install the Rockstar Launcher.
+            </p>
+            <p>
+               I opened a support chat and detailed what I knew of my issue: the
+               error code. Over the course of 7 hours, they gave me multiple
+               steps, including fully removing the Rockstar Launcher multiple
+               times, reinstalling it, disabling antivirus and firewalls,
+               changing DNS servers, multiple restarts, and a system repair
+               using <code>SFC scannow</code>. Nothing worked, and I received
+               the same error message every single time.
+            </p>
+            <p>
+               I would like to add that this would not have happened if Rockstar
+               did not insist on using an external launcher.
+            </p>
+
+            <h2>Reinstalling Windows</h2>
+            <p>
+               Finally, I tried reinstalling Windows using the option to keep my
+               apps. I downloaded an ISO and used Rufus to create a bootable
+               USB, but I could not use this to reinstall Windows while keeping
+               my apps, as the language I had chosen was American English,
+               whereas my device is using British English. A stupid reason, made
+               more stupid by the fact that the ISO choices are American English
+               and International English, with no British option. I eventually
+               used the Windows Installation Media Creation Tool to make a
+               bootable USB, which I used to reinstall Windows. Upon trying to
+               launch RDR2, it worked! But why?
+            </p>
+            <p>
+               When I first installed RDR2, I had OneDrive preinstalled by
+               Microsoft. After installing RDR2, I uninstalled OneDrive and
+               moved the Documents folder from
+               <code>C:/Users/username/OneDrive</code> to
+               <code>C:/Users/username</code>. The Rockstar Launcher stores
+               files in the Documents folder, and upon moving it, the launcher
+               didn't know where to look. This was never mentioned in the
+               support chat as a possibility. Reinstalling Windows puts the
+               Documents folder back into the OneDrive folder, thus fixing the
+               issue. I hope anyone experiencing a similar issue can use this to
+               help them. I will be sending this to Rockstar in the hope they
+               add this to their troubleshooting. I also ask them to change
+               their launcher code to take this into consideration
+               automatically. Normally, the Documents folder is in one of two
+               places: <code>C:/Users/username/Documents</code>, or
+               <code>C:/Users/username/OneDrive/Documents</code>. It should not
+               be hard to check both of these locations.
+            </p>
+
+            <h2>Summary</h2>
+            <ul>
+               <li>
+                  If you are having problems with the Rockstar Launcher failing
+                  a Social Club update, try moving your Documents folder from
+                  <code>C:/Users/username/Documents</code> to
+                  <code>C:/Users/username/OneDrive/Documents</code> or
+                  vice-versa.
+               </li>
+               <li>
+                  Windows team: Please don't change the location of critical
+                  folders because you want us to use OneDrive.
+               </li>
+               <li>
+                  Rockstar team: Please check the two common locations and/or
+                  add this step to your troubleshooting.
+               </li>
+            </ul>
+         </div>
+      </main>
+
+      <footer>
+         <div class="footer-text">&copy; 2024 Jazza. All rights reserved.</div>
+         <div class="made-with-love">Made with ❤️❤️ in Australia by Jazza.</div>
+      </footer>
+
+      <script src="/headerMargin.js"></script>
+   </body>
+</html>
